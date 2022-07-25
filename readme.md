@@ -1,6 +1,7 @@
 # Decorators
+[![My Skills](https://skillicons.dev/icons?i=ts&theme=light)](https://skillicons.dev)
 
-Decorators are just a functions
+`Decorators are JavaScript functions that are executed ONCE for the class definition and not per the instance`
 
 ! Modify tsconfig.json <br>
 "emitDecoratorMetadata": true, <br>
