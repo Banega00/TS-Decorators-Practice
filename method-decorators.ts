@@ -6,15 +6,13 @@ function MethodDecorator(
     //value represents the function (the code that will be executed)
     //in this way we can overwrite actual function behavior
     console.log(propertyDescriptor.value())//invoking function in decorator
-    // console.log('Before function execution')
     propertyDescriptor.value = function(...args:any[]){//args to access original function parameters
         return `Hello ${args}`
     }
-    // console.log('after function execution')
 }
 
 
-//Wrapping function execution with decorator
+//Wrapping method execution with decorator
 function MethodDecorator2(
     target: Object, 
     propertyKey: string,
@@ -22,9 +20,9 @@ function MethodDecorator2(
 ){
     const value = propertyDescriptor.value;
     propertyDescriptor.value = function(...args:any[]){//args to access original function parameters
-        console.log('Before function execution')
+        console.log('Before method execution')
         value.apply(this, args);//executes the original method
-        console.log('After function execution')
+        console.log('After method execution')
     }
 }
 

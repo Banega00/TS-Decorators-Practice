@@ -1,4 +1,5 @@
-/*in order to pass additional arguments to a decorator
+/*
+In order to pass additional arguments to a decorator
 you have to use Decorator Factory
 
 Decorator Factory is function that receives parameters and 
