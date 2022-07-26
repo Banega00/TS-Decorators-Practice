@@ -23,7 +23,8 @@ const obj2 = {
 
 Object.defineProperty(obj2, 'prop1', { writable: false})
 
-obj2.prop1 = 'def'//This will throw an error because prop1 is now read-only
+//This will throw an error because prop1 is now read-only
+// obj2.prop1 = 'def'
 
 //Non Enumerable property - not visible in for..in loop or Object.keys
 const obj3 = {
@@ -42,3 +43,22 @@ const obj4 = {
 
 Object.defineProperty(obj4, 'prop1', { configurable: false })
 Object.defineProperty(obj4, 'prop1', { writable: false, enumerable: true})//no effect
+
+
+//getters and setters
+const obj5:any = {
+    _prop1: 'abc'
+}
+
+Object.defineProperty(obj5, 'prop1', {
+    get: function() {
+        return this._prop1+'!'
+    },
+
+    set: function(newValue){
+        this._prop1 = newValue + "!"
+    }
+})
+
+obj5.prop1 = 'abcdef' 
+console.log(obj5.prop1)
